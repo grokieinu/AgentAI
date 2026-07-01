@@ -57,14 +57,10 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Handle GET request with info
+// Handle GET request — some platforms check this for availability
 export async function GET() {
   return NextResponse.json(
-    {
-      message: 'AI Trading Agent API',
-      usage: 'Send a POST request with { prompt, requestId, timestamp }',
-      health: 'GET /health for health check',
-    },
+    { status: 'ok' },
     { status: 200, headers: corsHeaders }
   )
 }
